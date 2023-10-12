@@ -1,0 +1,15 @@
+app_main:
+    path: /
+    controller: App\Controller\MainController::index
+
+create:
+    path: /create
+    controller: App\Controller\MainController::create
+
+update:
+    path: /update/{id}
+    controller: App\Controller\MainController::update
+
+delete:
+    path: /delete/{id}
+    controller: App\Controller\MainController::delete

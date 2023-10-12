@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Test{% endblock %}</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+
+
+
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            /*====================================
+            =            Data Tables            =
+            ====================================*/
+            $("#example").DataTable({
+                language: {
+                    sProcessing: "Traitement en cours ...",
+                    sLengthMenu: "Afficher _MENU_ lignes",
+                    sZeroRecords: "Aucun résultat trouvé",
+                    sEmptyTable: "Aucune donnée disponible",
+                    sInfo: "Lignes _START_ à _END_ sur _TOTAL_",
+                    sInfoEmpty: "Aucune ligne affichée",
+                    sInfoFiltered: "(Filtrer un maximum de_MAX_)",
+                    sInfoPostFix: "",
+                    sSearch: "Chercher:",
+                    sUrl: "",
+                    sInfoThousands: ",",
+                    sLoadingRecords: "Chargement...",
+                    oPaginate: {
+                        sFirst: "Premier",
+                        sLast: "Dernier",
+                        sNext: "Suivant",
+                        sPrevious: "Précédent",
+                    },
+                    oAria: {
+                        sSortAscending: ": Trier par ordre croissant",
+                        sSortDescending: ": Trier par ordre décroissant",
+                    },
+                },
+            });
+
+        </script>
+    </body>
+</html>
